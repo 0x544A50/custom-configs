@@ -20,7 +20,7 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep 
 
 **Dependencies (and extras)**: `sudo apt install zsh git vim python3-pip ufw htop bat tmux curl wget`
 
-**Repos the script will pull github**:
+**Repos the script will pull from github**:
 - https://raw.githubusercontent.com/ohmyzsh/master/tools/install.sh
 - https://github.com/romkatv/powerlevek10k
 - https://github.com/zsh-users/zsh-autosuggestions
@@ -30,3 +30,12 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep 
 
 ### What else?
 Look out for the `update-configs.sh` script which will appear in this repo at a later date. When you git pull any changes in this repo, this script will automatically handle backups of your old config files and replace them with current versions.
+
+#### Troubleshooting Resources
+- https://www.ivaylopavlov.com/setting-up-windows-terminal-wsl-and-oh-my-zsh/#install_zs
+- https://linuxhint.com/use-zsh-auto-suggestions/
+- https://dev.to/andrenbrandao/terminal-setup-with-zsh-tmux-dracula-theme-48lm
+- Powerline fonts for WSL2: http://iamnotmyself.com/2017/04/15/setting-up-powerline-shell-on-windows-subsystem-for-linux/
+- https://github.com/jimeh/tmux-themepack
+
+
