@@ -10,6 +10,10 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep 
 3. Run the script with `./initial-setup.sh` and follow prompts
 4. Profit.
 
+**NOTE! Extra steps!**
+1. You made need to logout for your profiles to update their defaults, without this Zsh may not start correctly. Be sure log out/in at the least.
+2. In order for tmux to download the appropriate themes, the first time you open tmux press `<prefix>+I` for the plugin manager to grab the theme. Default prefix for tmux is `CTRL+b`.
+
 ### What configs are included?
 
 **I'm currently managing configurations for**: Zsh, Bash, Vim, Tmux, Powerlevel10k
