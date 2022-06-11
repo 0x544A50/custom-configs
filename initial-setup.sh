@@ -8,8 +8,14 @@
 # - https://github.com/jimeh/tmux-themepack
 
 # Install dependencies with the below commands
+# Debian:
 # - sudo apt update -y && sudo apt upgrade -y
-# - sudo apt install -y zsh git zsh vim python3-pip ufw htop bat tmux curl wget
+# - sudo apt install -y zsh git vim python3-pip ufw htop bat tmux curl wget
+
+# CentOS/RHEL:
+# You may need to install RPMFusion repos: https://rpmfusion.org/
+# - sudo dnf update -y && sudo dnf upgrade -y
+# - sudo dnf install zsh git vim python3-pip ufw htop bat tmux curl wget
 
 # zsh and oh-my-zsh
 if [[ -d ~/.oh-my-zsh ]]; then rm -rf ~/.oh-my-zsh; fi
