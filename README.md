@@ -1,11 +1,11 @@
 ## Need configs?
 ### I got you..
 
-These are evolving config files I use on virtually all my linux machines.
-Their primary compatibility is aimed at WSL2 and cloud Linux, but I intended on making the auto-configuration as flexibile as possible.
+These are rolling config files I use on my linux machines.
+Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep the script platform independent (but Debian based).
 
 ### How to use?
-1. Clone this repo with `git clone git@github.com:tphaneuf1/configs.git`
+1. Clone this repo with `git clone git@github.com:s0cketwrench/custom-configs.git` or `git clone https://github.com/s0cketwrench/custom-configs.git`
 2. Add executable permissions with `chmod +x initial-setup.sh`
 3. Run the script with `./initial-setup.sh` and follow prompts
 4. Profit.
@@ -14,11 +14,9 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I intended on 
 
 **I'm currently managing configurations for**: Zsh, Bash, Vim, Tmux, Powerlevel10k
 
-The script will also install dependencies and applications needed for the configuration or basic daily usability.
+**Dependencies (and extras)**: `sudo apt install zsh git vim python3-pip ufw htop bat tmux curl wget`
 
-**From apt repositories**: zsh, git, vim, python3-pip, ufw, htop, bat, tmux
-
-**From github**:
+**Repos the script will pull github**:
 - https://raw.githubusercontent.com/ohmyzsh/master/tools/install.sh
 - https://github.com/romkatv/powerlevek10k
 - https://github.com/zsh-users/zsh-autosuggestions
@@ -27,5 +25,4 @@ The script will also install dependencies and applications needed for the config
 - https://github.com/flazz/vim-colorschemes
 
 ### What else?
-Look out for the `update-configs.sh` script which will appear in this repo at a later date.
-When you pull changes in the repo, running this script will automatically handle backups of your old config files and replacng them with current versions.
+Look out for the `update-configs.sh` script which will appear in this repo at a later date. When you git pull any changes in this repo, this script will automatically handle backups of your old config files and replace them with current versions.
