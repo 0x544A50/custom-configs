@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Resources:
 # - https://www.ivaylopavlov.com/setting-up-windows-terminal-wsl-and-oh-my-zsh/#install_zs
 # - https://linuxhint.com/use-zsh-auto-suggestions/
@@ -5,37 +7,47 @@
 # - Powerline fonts for WSL2: http://iamnotmyself.com/2017/04/15/setting-up-powerline-shell-on-windows-subsystem-for-linux/
 # - https://github.com/jimeh/tmux-themepack
 
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install zsh git zsh vim python3-pip ufw htop bat tmux
+# Install dependencies with the below commands
+# - sudo apt update -y && sudo apt upgrade -y
+# - sudo apt install -y zsh git zsh vim python3-pip ufw htop bat tmux curl wget
 
-# ZSH and oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# zsh and oh-my-zsh
+if [[ -d ~/.oh-my-zsh ]]; then rm -rf ~/.oh-my-zsh; fi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# get powerlevel10k
+if [[ -d ~/.oh-my-zsh/themes/powerlevel10k ]]; then rm -rf ~/.oh-my-zsh/themes/powerlevel10k; fi
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# get zsh-utosuggestions
+if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-hightlighting
+
+# get zsh-syntax-highlighting
+if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then rm -rf ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting; fi
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Tmux plugins
+if [[ -d ~/.tmux/plugins/tpm ]]; then rm -rf ~/.tmux/plugins/tpm; fi
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Vim plugins and themes
-mkdir -p ~/.vim
-git clone https://github.com/flazz/vim-colorschemes.git 
-cp ./vim-colorschemes/* ~/.vim/
-rm -r ./vim-colorschemes
+if ! [[ -d ~/.vim ]]; then mkdir -p ~/.vim; fi
+git clone https://github.com/flazz/vim-colorschemes.git ./vim-colorschemes
+cp -r ./vim-colorschemes/colors ~/.vim/
+rm -rf ./vim-colorschemes
 
 # Backup old configs
 mkdir -p ~/.config/backups
-cp ~/.zshrc ~/.config/backups/zshrc
-cp ~/.bashrc ~/.config/backups/bashrc
-cp ~/.p10k.zsh ~/.config/backups/p10k.zsh
-cp ~/.vimrc ~/.config/backups/vimrc
-cp ~/.tmux.conf ~/.config/backups/tmux.conf
+if [[ -f ~/.zshrc ]]; then cp ~/.zshrc ~/.config/backups/zshrc; fi
+if [[ -f ~/.bashrc ]]; then cp ~/.bashrc ~/.config/backups/bashrc; fi
+if [[ -f ~/.p10k.zsh ]]; then cp ~/.p10k.zsh ~/.config/backups/p10k.zsh; fi
+if [[ -f ~/.vimrc ]]; then cp ~/.vimrc ~/.config/backups/vimrc; fi
+if [[ -f ~/.tmux.conf ]]; then cp ~/.tmux.conf ~/.config/backups/tmux.conf; fi
 
-cp ./zshrc ~/.zshrc
-cp ./bashrc ~/.bashrc
-cp ./p10k.zsh ~/.p10k.zsh
-cp ./vimrc ~/.vimrc
-cp ./tmux.conf ~/.tmux.conf
-
-source ~/.zshrc
+cp ./configs/zshrc ~/.zshrc
+cp ./configs/bashrc ~/.bashrc
+cp ./configs/p10k.zsh ~/.p10k.zsh
+cp ./configs/vimrc ~/.vimrc
+cp ./configs/tmux.conf ~/.tmux.conf
 
