@@ -1,3 +1,8 @@
+# Connect to or start a tmux session automatically
+if [ -z "$TMUX" ]; then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -119,6 +124,9 @@ ZSH_DISABLE_COMPFIX=true
 alias ll='ls -lah'
 alias ls='ls -l --color=auto'
 alias cat='batcat'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 export ORACLE_HOME=/opt/oracle/instantclient_21_6
 export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
