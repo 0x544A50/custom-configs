@@ -17,19 +17,19 @@
 # - sudo dnf update -y && sudo dnf upgrade -y
 # - sudo dnf install zsh git vim python3-pip ufw htop bat tmux curl wget
 
-# zsh and oh-my-zsh
+# oh-my-zsh
 if [[ -d ~/.oh-my-zsh ]]; then rm -rf ~/.oh-my-zsh; fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# get powerlevel10k
+# powerlevel10k
 if [[ -d ~/.oh-my-zsh/themes/powerlevel10k ]]; then rm -rf ~/.oh-my-zsh/themes/powerlevel10k; fi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# get zsh-utosuggestions
+# zsh-autosuggestions
 if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions; fi
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# get zsh-syntax-highlighting
+# zsh-syntax-highlighting
 if [[ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then rm -rf ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting; fi
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
