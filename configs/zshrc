@@ -4,7 +4,7 @@ if [ -z "$TMUX" ]; then
 fi
 
 # Run a MOTD so you know which f*cking computer you just opened a shell on
-bash -c "figlet -f slant $(cat /etc/hostname) | lolcat"
+bash -c "figlet -w $(tput cols) -f slant $(hostname) | lolcat"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -126,7 +126,7 @@ ZSH_DISABLE_COMPFIX=true
 
 alias ll='ls -lah'
 alias ls='ls -l --color=auto'
-alias cat='batcat'
+alias cat='bat'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
