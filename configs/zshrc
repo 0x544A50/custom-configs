@@ -132,3 +132,6 @@ alias vlc-cli='vlc --intf ncurses'
 export ORACLE_HOME=/opt/oracle/instantclient_21_6
 export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
 export PATH=$ORACLE_HOME:$PATH
+
+# Run a MOTD so you know which f*cking computer you just opened a shell on
+figlet -f slant $(cat /etc/hostname) | lolcat

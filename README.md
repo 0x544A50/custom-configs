@@ -18,7 +18,7 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep 
 
 **I'm currently managing configurations for**: Zsh, Bash, Vim, Tmux, Powerlevel10k
 
-**Dependencies (and extras)**: `sudo apt install zsh git vim python3-pip ufw htop bat tmux curl wget`
+**Dependencies (and extras)**: `sudo apt install zsh git vim python3-pip ufw htop bat tmux curl wget figlet lolcat`
 
 **Repos the script will pull from github**:
 - https://raw.githubusercontent.com/ohmyzsh/master/tools/install.sh
