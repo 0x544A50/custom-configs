@@ -50,12 +50,12 @@ if [[ -f ~/.bashrc ]]; then cp ~/.bashrc ~/.config/backups/bashrc; fi
 if [[ -f ~/.p10k.zsh ]]; then cp ~/.p10k.zsh ~/.config/backups/p10k.zsh; fi
 if [[ -f ~/.vimrc ]]; then cp ~/.vimrc ~/.config/backups/vimrc; fi
 if [[ -f ~/.tmux.conf ]]; then cp ~/.tmux.conf ~/.config/backups/tmux.conf; fi
-if [[ -f ~/.tmux.remote.conf ]]; then cp ~/.tmux.remote.conf ~/.config/backups/tmux.remote.conf; fi
+if [[ -f ~/.tmux/tmux.remote.conf ]]; then cp ~/.tmux/tmux.remote.conf ~/.config/backups/tmux.remote.conf; fi
 
 cp ./configs/zshrc ~/.zshrc
 cp ./configs/bashrc ~/.bashrc
 cp ./configs/p10k.zsh ~/.p10k.zsh
 cp ./configs/vimrc ~/.vimrc
 cp ./configs/tmux.conf ~/.tmux.conf
-cp ./configs/tmux.remote.conf ~/.tmux.remote.conf
+cp ./configs/tmux.remote.conf ~/.tmux/tmux.remote.conf
 
