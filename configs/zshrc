@@ -4,7 +4,14 @@ if [ -z "$TMUX" ]; then
 fi
 
 # Run a MOTD so you know which f*cking computer you just opened a shell on
-bash -c "figlet -w $(tput cols) -f slant $(hostname) | lolcat"
+# If you have installed figlet and lolcat, it will default to a generic msg
+if ! [ -x "$(command -v lolcat) &>/dev/null" ] || [ -x "$(command -v figlet) &>/dev/null" ]; then
+    bash -c "figlet -w $(tput cols) -f slant $(hostname) | lolcat"
+else
+    bash -c "tput bold; date; tput sgr0; \
+    echo '$(tput smul) HOSTNAME: $(tput rmul)$(hostname)'; \
+    echo '$(tput smul)USER: $(tput rmul)$USER'"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -126,7 +133,7 @@ ZSH_DISABLE_COMPFIX=true
 
 alias ll='ls -lah'
 alias ls='ls -l --color=auto'
-alias cat='bat'
+alias cat='batcat'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -135,5 +142,4 @@ alias vlc-cli='vlc --intf ncurses'
 export ORACLE_HOME=/opt/oracle/instantclient_21_6
 export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
 export PATH=$ORACLE_HOME:$PATH
-
 
