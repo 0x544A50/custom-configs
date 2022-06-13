@@ -127,6 +127,7 @@ alias cat='batcat'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias vlc-cli='vlc --intf ncurses'
 
 export ORACLE_HOME=/opt/oracle/instantclient_21_6
 export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
