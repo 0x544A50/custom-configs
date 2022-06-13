@@ -42,3 +42,10 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 map <C-E> :tabnew <bar> :Explore<CR>
+
+" In visual mode, use SHIFT+ARROW_KEY
+" to move the current line up or down
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>

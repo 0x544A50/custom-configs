@@ -37,5 +37,5 @@ Look out for the `update-configs.sh` script which will appear in this repo at a 
 - https://dev.to/andrenbrandao/terminal-setup-with-zsh-tmux-dracula-theme-48lm
 - Powerline fonts for WSL2: http://iamnotmyself.com/2017/04/15/setting-up-powerline-shell-on-windows-subsystem-for-linux/
 - https://github.com/jimeh/tmux-themepack
-
+- Tmux configuration and nested sessions (ssh): https://github.com/samoshkin/tmux-config
 
