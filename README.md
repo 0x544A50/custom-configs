@@ -5,6 +5,7 @@ These are rolling config files I use on my linux machines.
 Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep the script platform independent (but Debian based).
 
 ### How to use?
+0. Install the dependcies based on your distros package manager (listed below).
 1. Clone this repo with `git clone git@github.com:s0cketwrench/custom-configs.git` or `git clone https://github.com/s0cketwrench/custom-configs.git`
 2. Add executable permissions with `chmod +x initial-setup.sh`
 3. Run the script with `./initial-setup.sh` and follow prompts
@@ -13,12 +14,13 @@ Their primary compatibility is aimed at WSL2 and cloud Linux, but I try to keep 
 **NOTE! Extra steps!**
 1. You made need to logout for your profiles to update their defaults, without this Zsh may not start correctly. Be sure log out/in at the least.
 2. In order for tmux to download the appropriate themes, the first time you open tmux press `<prefix>+I` for the plugin manager to grab the theme. Default prefix for tmux is `CTRL+b`.
-
+3. Powerlevel make look like shit the first time you open it. Be sure to run `p10k configure`
 ### What configs are included?
 
 **I'm currently managing configurations for**: Zsh, Bash, Vim, Tmux, Powerlevel10k
 
-**Dependencies (and extras)**: `sudo apt install zsh git vim python3-pip ufw htop bat tmux curl wget figlet lolcat`
+**Dependencies:** 
+`zsh git vim bat tmux curl wget figlet lolcat`
 
 **Repos the script will pull from github**:
 - https://raw.githubusercontent.com/ohmyzsh/master/tools/install.sh
